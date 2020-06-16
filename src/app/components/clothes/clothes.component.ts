@@ -1,9 +1,7 @@
-import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ClothesService } from 'src/app/services/clothes.service';
-import { ActivatedRoute, Router } from '@angular/router';
-import { tap } from 'rxjs/operators';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { ClothesListComponent } from './clothes-list/clothes-list.component';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Clothes } from 'src/app/models/clothes.model';
 
 @Component({
