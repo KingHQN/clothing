@@ -1,0 +1,11 @@
+<div class="clothes-item">
+    <app-clothes-item *ngFor="let clothe of clothes | async | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize" [clothe]="clothe"></app-clothes-item>
+</div>
+<ngb-pagination [collectionSize]="(clothes | async).length" [(page)]="page" [pageSize]="pageSize" [maxSize]="5" [rotate]="true" [boundaryLinks]="true">
+  <ng-template ngbPaginationFirst>&lt;&lt;</ng-template>
+  <ng-template ngbPaginationLast>&gt;&gt;</ng-template>
+  <ng-template ngbPaginationPrevious>&lt;</ng-template>
+  <ng-template ngbPaginationNext>&gt;</ng-template>
+  <ng-template ngbPaginationEllipsis>...</ng-template>
+  <ng-template ngbPaginationNumber let-page>{{ page }}</ng-template>
+</ngb-pagination>

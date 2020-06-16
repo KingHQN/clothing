@@ -1,1 +1,87 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import "../node_modules/eva-icons/style/eva-icons.css";
+
+html, body {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body, * {
+  padding: 0;
+  margin: 0;
+  color: #000;
+}
+
+*:not(i) {
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.offset {
+  content: '';
+  padding-top: 120px;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+ngb-pagination {
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+
+  & .pagination {
+    display: flex;
+    padding-left: 0;
+
+    .page-item.disabled {
+
+      .page-link {
+        color: #6c757d;
+        pointer-events: none;
+        cursor: auto;
+        background-color: #fff;
+        border-color: #dee2e6;
+      }
+    }
+
+    .page-item {
+
+
+      .page-link {
+        position: relative;
+        display: block;
+        padding: .5rem .75rem;
+        margin-left: -1px;
+        line-height: 1.25;
+        color: #066FFF;
+        background-color: #fff;
+        border: 1px solid #dee2e6;
+        outline: none;
+      }
+
+      :first-child .page-link {
+        margin-left: 0;
+        border-top-left-radius: .25rem;
+        border-bottom-left-radius: .25rem;
+      }
+
+      &.active .page-link {
+        z-index: 3;
+        color: #fff;
+        background-color: #007bff;
+        border-color: #007bff;
+      }
+    }
+  }
+}

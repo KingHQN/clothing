@@ -1,0 +1,9 @@
+<div class="clothes-wrapper container offset">
+  <div class="categories-wrapper">
+    <a [routerLink]="['/quanao']" routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}" (click)="changeFilter('all')">All</a>
+    <a [routerLink]="['/quanao', nonAccentVietnamese(category.name)]" routerLinkActive='active' *ngFor="let category of categories" (click)="changeFilter(category.name)">{{ category.name }}</a>
+  </div>
+  <div class="products-wrapper">
+    <app-clothes-list></app-clothes-list>
+  </div>
+</div>

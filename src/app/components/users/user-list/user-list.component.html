@@ -1,0 +1,13 @@
+<div class="offset">
+  <h1>Users List</h1>
+  <button>Add</button>
+  <ul >
+    <li *ngFor="let user of users; index as i">
+      <span>{{ i + 1 }}</span>
+      {{ user.name }}
+      <button (click)="onSelect(user)">View</button>
+      <button (click)="editUser()">Edit</button>
+      <button (click)="deleteUser(user._id)">Delete</button>
+    </li>
+  </ul>
+</div>

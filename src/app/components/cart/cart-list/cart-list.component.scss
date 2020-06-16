@@ -1,0 +1,176 @@
+h1 {
+  font-size: 50px;
+  font-weight: 500;
+  margin-bottom: 50px;
+}
+
+.cart-box {
+  border: 1px solid lightgray;
+  padding: 20px;
+
+  & .box-header {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  & .box-table {
+
+
+    & table {
+      width: 100%;
+
+      & thead {
+
+        & tr {
+          text-align: left;
+          height: 50px;
+
+          & th {
+            font-size: 20px;
+            font-weight: 500;
+            border-bottom: 1px solid lightgray;
+
+            &:nth-child(1) {
+              width: 150px;
+            }
+
+            &:nth-child(2) {
+              width: 300px;
+            }
+
+            &:nth-child(3) {
+              text-align: center;
+              width: 100px;
+            }
+
+            &:nth-child(4) {
+              text-align: center;
+              width: 100px;
+            }
+
+            &:nth-child(5) {
+              text-align: center;
+              width: 500px;
+            }
+
+            &:nth-child(6) {
+              text-align: right;
+            }
+
+            &:nth-child(7) {
+              text-align: center;
+              width: 80px;
+            }
+          }
+        }
+      }
+
+      & tbody {
+
+
+        & tr {
+          font-size: 18px;
+
+          & td {
+            padding: 10px 0;
+            border-bottom: 1px solid lightgray;
+
+            &:nth-child(1) {
+
+
+              & img {
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+              }
+            }
+
+            &:nth-child(3) {
+              text-align: center;
+            }
+
+            &:nth-child(4) {
+              text-align: center;
+
+              & span {
+                display: block;
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+                border: 1px solid black;
+                margin: 0 auto;
+              }
+            }
+
+            &:nth-child(5) {
+              text-align: center;
+
+              & button {
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+                background: #79848D;
+                border: 0;
+                outline: none;
+                cursor: pointer;
+                color: #FFF;
+                font-size: 19px;
+
+                &:hover {
+                  background: #616A71;
+                }
+
+                &.disabled {
+                  pointer-events: none;
+                }
+              }
+
+              & span {
+                margin: 0 30px;
+              }
+            }
+
+            &:nth-child(6) {
+              text-align: right;
+            }
+
+            &:nth-child(7) {
+              text-align: center;
+
+              & i {
+                font-size: 30px;
+                vertical-align: middle;
+                cursor: pointer;
+                transition: all .5s ease-out;
+
+                &:hover {
+                  font-size: 40px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      & tfoot {
+
+
+        & tr {
+          height: 50px;
+          font-size: 20px;
+          font-weight: 500;
+
+          & th {
+            text-align: left;
+            padding-top: 10px;
+          }
+
+          & td {
+            padding-top: 10px;
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+}

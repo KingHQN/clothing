@@ -1,0 +1,10 @@
+.clothes-item {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-evenly;
+
+  & app-clothes-item {
+    margin-right: 30px;
+    margin-bottom: 30px;
+  }
+}

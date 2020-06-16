@@ -1,0 +1,16 @@
+<div class="clo-item-wrapper">
+  <img src="{{ clothe.image }}" alt="">
+  <div class="card-body">
+    <h4>{{ clothe.name }}</h4>
+    <span class="price">{{ clothe.price | currency }}</span>
+    <div class="size">
+      <h5>Size:</h5>
+      <span *ngFor="let s of clothe.size" (click)="checkSize(s)" [ngClass]="{ 'selected' : (size === s && sizeIsSelect) }">{{ s }}</span>
+    </div>
+    <div class="color">
+      <h5>Color:</h5>
+      <span *ngFor="let c of clothe.color" [style.background]="c" (click)="checkColor(c)" [ngClass]="{ 'selected' : (color === c && colorIsSelect) }"></span>
+    </div>
+  </div>
+  <button [ngClass]="{ 'selected' : (sizeIsSelect && colorIsSelect) }" (click)="addToCart()">Add to cart</button>
+</div>

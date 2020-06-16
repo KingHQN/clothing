@@ -1,0 +1,27 @@
+.clothes-wrapper {
+  display: flex;
+  align-items: flex-start;
+
+  .categories-wrapper {
+    border: 1px solid lightgray;
+    width: 200px;
+    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+
+    & a {
+      border-bottom: 1px solid lightgray;
+      padding: 10px;
+
+      &.active {
+        background: #066FFF;
+        color: #FFF;
+      }
+    }
+  }
+
+  .products-wrapper {
+    max-width: 1300px;
+  }
+}
