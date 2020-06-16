@@ -10,9 +10,9 @@ import { catchError } from 'rxjs/operators';
 export class ClothesService {
 
   // tslint:disable-next-line: variable-name
-  private _urlCategory = 'http://localhost:3001/api/category';
+  private _urlCategory = 'https://clothing-angular.herokuapp.com/api/category';
   // tslint:disable-next-line: variable-name
-  private _urlClothes = 'http://localhost:3001/api/clothes';
+  private _urlClothes = 'https://clothing-angular.herokuapp.com/api/clothes';
 
   private clothes: Clothes[];
   private filteredClothes: Clothes[];
