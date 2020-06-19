@@ -1,10 +1,10 @@
 export interface Category {
-  id: number;
+  _id: string;
   name: string;
 }
 
 export interface Clothes {
-  id: number;
+  _id: string;
   name: string;
   image: string;
   price: number;

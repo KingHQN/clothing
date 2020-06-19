@@ -52,7 +52,7 @@ export class CartService {
 
   addCart(product) {
     let productExists = false;
-    for (let i in this.cart) {
+    for (const i in this.cart) {
       if (this.cart[i].product === product.name && this.cart[i].size === product.size && this.cart[i].color === product.color) {
         this.cart[i].quantity++;
         this.updateToLocalStorage();
