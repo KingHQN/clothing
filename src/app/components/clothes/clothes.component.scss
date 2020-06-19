@@ -3,20 +3,24 @@
   align-items: flex-start;
 
   .categories-wrapper {
-    border: 1px solid lightgray;
     width: 200px;
     max-width: 200px;
     display: flex;
     flex-direction: column;
     margin-right: 30px;
+    background: #262626;
 
     & a {
-      border-bottom: 1px solid lightgray;
       padding: 10px;
 
       &.active {
-        background: #066FFF;
-        color: #FFF;
+        background: #1D1D1D;
+        color: #A578AD;
+      }
+
+      &:hover:not(.active) {
+        color: #A578AD;
+        background: #2F2F2F;
       }
     }
   }
