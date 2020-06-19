@@ -23,9 +23,9 @@ export class ClothesItemComponent implements OnInit {
   }
 
   addToCart() {
-    this.sizeIsSelect = false;
-    this.colorIsSelect = false;
-    this.cartService.addCart(this.data);
+    if (this.sizeIsSelect && this.colorIsSelect) {
+      this.cartService.addCart(this.data);
+    }
   }
 
   checkSize(value) {

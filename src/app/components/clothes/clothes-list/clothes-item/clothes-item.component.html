@@ -12,5 +12,5 @@
       <span *ngFor="let c of clothe.color" [style.background]="c" (click)="checkColor(c)" [ngClass]="{ 'selected' : (color === c && colorIsSelect) }"></span>
     </div>
   </div>
-  <button [ngClass]="{ 'selected' : (sizeIsSelect && colorIsSelect) }" (click)="addToCart()">Add to cart</button>
+  <button (click)="addToCart()">Add to cart</button>
 </div>
