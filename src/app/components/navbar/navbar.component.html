@@ -3,21 +3,37 @@
   <div class="navbar-collapse">
     <ul class="navbar-nav d-flex align-items-center">
       <li class="nav-item">
-        <a routerLink='/' routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link">Home</a>
+        <button mat-button routerLink='/' routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link">Home</button>
       </li>
       <li class="nav-item">
-        <a routerLink='/quanao' routerLinkActive="active" class="nav-link">Clothing</a>
+        <button mat-button [routerLink]="['/quanao']" routerLinkActive="active" class="nav-link">Clothing</button>
       </li>
       <li class="nav-item">
-        <a routerLink='/cart' class="nav-link cart-link">
-          <i class="eva eva-shopping-cart-outline"></i>
-          <div *ngIf="length > 0" class="circle">
-            <span class="num">{{ length }}</span>
-          </div>
-        </a>
+        <button mat-icon-button routerLink='/cart' class="nav-link cart-link">
+          <mat-icon matBadge="{{ length }}" matBadgeColor="warn" matBadgeHidden="{{ length < 1 }}">shopping_cart</mat-icon>
+        </button>
       </li>
-      <li class="nav-item">
-        <a routerLink='/login' routerLinkActive="active" class="nav-link">Login</a>
+      <li class="nav-item" *ngIf="!(loggedIn$ | async)">
+        <button mat-button routerLink='/login' routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link">Login</button>
+      </li>
+      <li class="nav-item" *ngIf="(loggedIn$ | async)">
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          <mat-icon>account_circle</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item routerLink='/admin/clothing' routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <mat-icon>list_alt</mat-icon>
+            <span>Manage Clothing</span>
+          </button>
+          <button mat-menu-item routerLink='/admin/orders' routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <mat-icon>list_alt</mat-icon>
+            <span>Manage Orders</span>
+          </button>
+          <button mat-menu-item (click)="logout()">
+            <mat-icon>exit_to_app</mat-icon>
+            <span>Logout</span>
+          </button>
+        </mat-menu>
       </li>
     </ul>
   </div>

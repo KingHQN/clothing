@@ -1,0 +1,35 @@
+.login-box {
+  position: absolute;
+  width: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background: #424242;
+  padding: 30px;
+
+  h1 {
+    font-size: 50px;
+    padding-bottom: 20px;
+  }
+
+  mat-form-field {
+    margin-bottom: 20px;
+    width: 100%;
+
+    mat-error {
+      font-size: 15px;
+    }
+  }
+
+  .errorsMsg {
+    text-align: left;
+    background: #F2DDDD;
+    color: #FF0000;
+    padding: 5px 10px;
+  }
+
+  .loginbtn {
+    margin-top: 20px;
+  }
+}

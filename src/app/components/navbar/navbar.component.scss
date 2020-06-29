@@ -8,7 +8,7 @@
   right: 0;
   left: 0;
   top: 0;
-  z-index: 1030;
+  z-index: 2;
 
   & .navbar-nav {
     display: flex;
@@ -18,32 +18,7 @@
       margin-left: 20px;
 
       & .nav-link {
-        padding-bottom: 5px;
         position: relative;
-
-        &.cart-link {
-
-          & i {
-            font-size: 25px;
-          }
-
-          & .circle {
-            position: absolute;
-            width: 22px;
-            height: 22px;
-            top: -20px;
-            background-color: #fed136;
-            right: -10px;
-            border-radius: 50%;
-            text-align: center;
-          }
-
-          & span.num {
-            color: black;
-            margin: 0 auto;
-            font-size: 14px;
-          }
-        }
 
         &.cart-link:hover:after {
           transform: scaleX(0);

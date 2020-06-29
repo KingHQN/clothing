@@ -1,0 +1,32 @@
+<div class="offset container">
+  <div class="login-box">
+    <h1>Login</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)" novalidate>
+      <mat-form-field appearance="standard">
+        <mat-label>Enter your email</mat-label>
+        <input matInput placeholder="pat@example.com" formControlName="email" [errorStateMatcher]="matcher" autocomplete="off" required>
+        <mat-error *ngFor="let validation of validationMessages.email">
+          <ng-container *ngIf="email.hasError(validation.type)">
+            {{ validation.message }}
+          </ng-container>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="standard">
+        <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" [errorStateMatcher]="matcher" required>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngFor="let validation of validationMessages.password">
+          <ng-container *ngIf="password.hasError(validation.type)">
+            {{ validation.message }}
+          </ng-container>
+        </mat-error>
+      </mat-form-field>
+      <div class="errorsMsg" *ngIf="errorsMsg">
+        {{ errorsMsg.errorMessage }}
+      </div>
+      <button class="loginbtn" mat-raised-button color="primary">Login</button>
+    </form>
+  </div>
+</div>

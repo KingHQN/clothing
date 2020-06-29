@@ -7,19 +7,30 @@ import { ClothesListComponent } from './components/clothes/clothes-list/clothes-
 import { ClothesItemComponent } from './components/clothes/clothes-list/clothes-item/clothes-item.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CartListComponent } from './components/cart/cart-list/cart-list.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'quanao',
     component: ClothesComponent,
     children: [
-      { path: ':category', component: ClothesListComponent },
-      { path: '', component: ClothesListComponent, pathMatch: 'full' },
+      { path: '', component: ClothesComponent, pathMatch: 'full' },
+      { path: ':category', component: ClothesComponent },
       { path: '**', component: PageNotFoundComponent }
     ]
   },
-  { path: 'cart', component: CartComponent },
-  { path: '**', component: PageNotFoundComponent }
+  {
+    path: 'cart',
+    children: [
+      { path: '', component: CartComponent, pathMatch: 'full' },
+      { path: '**', component: PageNotFoundComponent }
+    ]
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  }
+  // { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
